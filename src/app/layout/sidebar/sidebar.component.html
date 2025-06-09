@@ -1,0 +1,60 @@
+<!-- <div class="" style="background: red"> -->
+
+<nav class="main-menu">
+  <h1>Fitness App</h1>
+  <img
+    class="logo"
+    src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb"
+    alt=""
+  />
+  <ul>
+    <li class="nav-item active" *ngFor="let item of menu">
+      <ng-container *ngIf="isActive(item.path!)">
+        <b></b>
+        <b></b>
+      </ng-container>
+      <a href="#">
+        <i class="fa fa-house nav-icon"></i>
+        <span class="nav-text">{{ item.title }}</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <b></b>
+      <b></b>
+      <a href="#">
+        <i class="fa fa-user nav-icon"></i>
+        <span class="nav-text">Profile</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <b></b>
+      <b></b>
+      <a href="#">
+        <i class="fa fa-calendar-check nav-icon"></i>
+        <span class="nav-text">Schedule</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <b></b>
+      <b></b>
+      <a href="#">
+        <i class="fa fa-person-running nav-icon"></i>
+        <span class="nav-text">Activities</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <b></b>
+      <b></b>
+      <a href="#">
+        <i class="fa fa-sliders nav-icon"></i>
+        <span class="nav-text">Settings</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<!-- </div> -->
+<!-- </div> -->
