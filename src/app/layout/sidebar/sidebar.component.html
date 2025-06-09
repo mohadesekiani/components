@@ -1,60 +1,91 @@
 <!-- <div class="" style="background: red"> -->
-
 <nav class="main-menu">
   <h1>Fitness App</h1>
-  <img
-    class="logo"
-    src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb"
-    alt=""
-  />
+  <img class="logo" src="" alt="" />
   <ul>
-    <li class="nav-item active" *ngFor="let item of menu">
+    <li
+      class="nav-item active"
+      *ngFor="let item of menu"
+      [class.active]="isActive(item.path!)"
+    >
       <ng-container *ngIf="isActive(item.path!)">
         <b></b>
         <b></b>
       </ng-container>
-      <a href="#">
-        <i class="fa fa-house nav-icon"></i>
-        <span class="nav-text">{{ item.title }}</span>
+      <a
+        href="#"
+        *ngIf="item.children!.length === 0"
+        [routerLink]="item.path"
+        [class.active]="isActive(item.path!)"
+        (click)="setActive(item.path!, item, $event); $event.preventDefault()"
+      >
+        <i class="bi" [ngClass]="item.icon"></i>
+        <span
+          class="nav-text"
+          [style.display]="isCollapsed ? 'none' : 'inline'"
+          >{{ item.title }}</span
+        >
       </a>
-    </li>
+      <!-- منوی دو سطحی -->
+      <div *ngIf="item.children!.length > 0">
+        <b></b>
+        <b></b>
+        <a
+          href="#"
+          [style.color]="hasActiveChild(item.children) ? 'orange' : ''"
+          style="width: 100%; margin-bottom: 20px"
+          (click)="toggleSubMenu(item); $event.preventDefault()"
+        >
+          <i class="bi" [ngClass]="item.icon"></i>
 
-    <li class="nav-item">
-      <b></b>
-      <b></b>
-      <a href="#">
-        <i class="fa fa-user nav-icon"></i>
-        <span class="nav-text">Profile</span>
-      </a>
-    </li>
+          <span
+            class="nav-text"
+            [style.display]="isCollapsed ? 'none' : 'inline'"
+            >{{ item.title }}</span
+          >
+          <div>
+            <i
+              *ngIf="!isCollapsed"
+              class="bi p-2"
+              [ngClass]="item.open ? 'bi-chevron-up' : 'bi-chevron-down'"
+            ></i>
+            <i
+              *ngIf="isCollapsed"
+              class="bi bi-chevron-left"
+              (click)="toggleSidebar(); toggleSubMenu(item)"
+            ></i>
+          </div>
+        </a>
 
-    <li class="nav-item">
-      <b></b>
-      <b></b>
-      <a href="#">
-        <i class="fa fa-calendar-check nav-icon"></i>
-        <span class="nav-text">Schedule</span>
-      </a>
-    </li>
-
-    <li class="nav-item">
-      <b></b>
-      <b></b>
-      <a href="#">
-        <i class="fa fa-person-running nav-icon"></i>
-        <span class="nav-text">Activities</span>
-      </a>
-    </li>
-
-    <li class="nav-item">
-      <b></b>
-      <b></b>
-      <a href="#">
-        <i class="fa fa-sliders nav-icon"></i>
-        <span class="nav-text">Settings</span>
-      </a>
+        <ul *ngIf="item.open">
+          <li
+            *ngFor="let child of item.children"
+            class="nav-item"
+            [class.active]="isActive(child.path!)"
+          >
+            <ng-container *ngIf="isActive(child.path!) || !isCollapsed">
+              <b></b>
+              <b></b>
+            </ng-container>
+            <a
+              href="#"
+              [class.active]="isActive(child.path!)"
+              (click)="
+                setActive(child.path!, child, $event); $event.preventDefault()
+              "
+              [routerLink]="child.path"
+              *ngIf="!isCollapsed"
+            >
+              {{ child.title }}
+            </a>
+          </li>
+        </ul>
+      </div>
     </li>
   </ul>
+  <div class="collapse-button" (click)="toggleSidebar()">
+    <i [ngClass]="isCollapsed ? 'bi-chevron-right' : 'bi-chevron-left'"></i>
+  </div>
 </nav>
 <!-- </div> -->
 <!-- </div> -->
