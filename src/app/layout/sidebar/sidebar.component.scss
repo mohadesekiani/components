@@ -147,3 +147,8 @@ nav ul li a {
   transition: transform 0.3s ease-in-out;
   transform: rotate(180deg);
 }
+
+.collapsed {
+  width: 65px;
+  // transition: width 0.3s ease-in-out;
+}

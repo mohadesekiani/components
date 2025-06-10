@@ -1,7 +1,19 @@
 <!-- <div class="" style="background: red"> -->
-<nav class="main-menu">
-  <h1>Fitness App</h1>
-  <img class="logo" src="" alt="" />
+<nav class="main-menu" [ngClass]="{ collapsed: isCollapsed }">
+  <div
+    style="height: 200px"
+    class="d-flex flex-column justify-content-center align-items-center"
+  >
+    <img
+      *ngIf="!isCollapsed"
+      alt="logo"
+      style="width: 100px"
+      src="/assets/img/authentication/images-removebg-preview.png"
+    />
+    <span class="mt-2" style="color: red" *ngIf="!isCollapsed">
+      آرشیو الکترونیکی اسناد بانک کشاورزی
+    </span>
+  </div>
   <ul>
     <li
       class="nav-item active"
@@ -84,7 +96,7 @@
     </li>
   </ul>
   <div class="collapse-button" (click)="toggleSidebar()">
-    <i [ngClass]="isCollapsed ? 'bi-chevron-right' : 'bi-chevron-left'"></i>
+    <i [ngClass]="isCollapsed ? 'bi-chevron-left' : 'bi-chevron-right'"></i>
   </div>
 </nav>
 <!-- </div> -->
