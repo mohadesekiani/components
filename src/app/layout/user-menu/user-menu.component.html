@@ -1,0 +1,38 @@
+<div ngbDropdown #myDrop="ngbDropdown" dropdown>
+  <button
+    type="button"
+    class="profile"
+    id="dropdownManual"
+    ngbDropdownAnchor
+    (click)="myDrop.toggle()"
+  >
+    <i class="bi bi-person-fill" style="color: var(--gray--70)"></i>
+  </button>
+  <div ngbDropdownMenu aria-labelledby="dropdownManual">
+    <div class="d-flex">
+      <div class="information">
+        <img
+          src="../../../../assets/img/authentication/user.png"
+          alt="profile-img"
+        />
+      </div>
+      <div>
+        <h3>محدثه کیانی<br /><span>ادمین </span></h3>
+      </div>
+    </div>
+    <ul>
+      <li style="border-top: 1px solid rgba(0, 0, 0, 0.05)">
+        <i class="bi bi-person-circle"></i>
+        <a routerLink="/user/profile">پروفایل من</a>
+      </li>
+      <li>
+        <i class="bi bi-inbox"></i>
+        <a routerLink="/user/user-log">تاریخچه رویدادهای من</a>
+      </li>
+      <li style="padding-top: 20px; border-top: 1px solid rgba(0, 0, 0, 0.05)">
+        <i class="bi bi-log-out"></i>
+        <a href="#">خروج</a>
+      </li>
+    </ul>
+  </div>
+</div>

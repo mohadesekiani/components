@@ -1,0 +1,115 @@
+ul {
+  padding: 0px 1rem;
+}
+.profile {
+  margin-right: 10px;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  background: white;
+  text-align: center;
+  font-size: 20px;
+  padding: 8px 0px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.information {
+  position: relative !important;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  margin: 10px 0px !important;
+}
+.information img {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100%;
+  object-fit: cover !important;
+}
+
+h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 5px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.2em;
+}
+h3 span {
+  font-size: 14px;
+  color: #cecece;
+  font-weight: 400;
+}
+ul li {
+  list-style: none;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+ul li i {
+  margin-left: 10px;
+  opacity: 0.6;
+  transition: 0.5s;
+}
+ul li:hover i {
+  opacity: 1;
+}
+ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: 0.5s;
+}
+ul li:hover a {
+  color: #4834d4;
+}
+.dropdown-user {
+  border: none !important;
+}
+::ng-deep .dropdown-toggle {
+  border: none !important;
+  color: var(--gray--70) !important;
+}
+::ng-deep .dropdown-menu {
+  position: absolute !important;
+  top: 10px !important;
+
+  padding: 10px 20px;
+  background: var(--primary--00);
+  width: 250px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  border: none;
+  transition: 0.5s !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  z-index: 1000;
+}
+::ng-deep .dropdown-menu.show {
+  top: 20px !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+::ng-deep .dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  background: var(--primary--00);
+  transform: rotate(45deg);
+}
+.dropdown-toggle::after {
+  display: none;
+  color: red;
+}

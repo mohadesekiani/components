@@ -1,0 +1,45 @@
+<div class="nav-item" style="padding-top: 16px">
+  <div class="d-flex" style="padding-left: 26px; padding-right: 26px">
+    <!-- right header -->
+    <div class="col-2">
+      <!-- pageTitle -->
+
+      <!-- <app-breadcrumb></app-breadcrumb> -->
+    </div>
+
+    <!-- left header -->
+    <div class="col-10">
+      <ul class="nav" style="display: flex; justify-content: flex-end">
+        <!-- search box -->
+        <div class="mx-2 search-wrapper col-7">
+          <input
+            class="form-control"
+            placeholder="جستجو..."
+            [(ngModel)]="filter"
+            (keyup)="keyDownSearcher()"
+          />
+          <button
+            class="btn icon-search"
+            style="left: 0; height: 100%; padding: 0 10px"
+            (click)="search()"
+          >
+            <i
+              *ngIf="showDropSearch == false"
+              class="bi bi-search"
+              style="transform: rotate(75deg); display: inline-block"
+            ></i>
+          </button>
+        </div>
+
+        <!-- bell -->
+        <li class="mx-2">
+          <app-system-notification></app-system-notification>
+        </li>
+        <!-- user menu -->
+        <li class="mx-2">
+          <app-user-menu></app-user-menu>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

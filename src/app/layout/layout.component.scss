@@ -5,10 +5,15 @@
 }
 
 app-header {
-  height: 60px;
+  height: 80px;
+  width: calc(100% - 250px); /* کم‌کردن عرض سایدبار */
   background-color: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  margin-right: 250px; /* این خط باعث میشه دقیقاً کنار سایدبار قرار بگیره */
+  position: fixed; /* اگر بخوای بالای صفحه بمونه */
+  top: 0;
+  left: 0;
 }
 
 .main-wrapper {

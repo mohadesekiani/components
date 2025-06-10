@@ -1,0 +1,37 @@
+.icon-search {
+  border: none;
+  background-color: white;
+}
+
+button.btn.icon-search:focus,
+button.btn.icon-search:active {
+  color: #009ca7 !important;
+  border: none;
+}
+// =================================search box
+li {
+  list-style-type: none;
+}
+.search-wrapper {
+  border-radius: 20px;
+  background-color: white;
+  padding-right: 12px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 580px;
+  color: var(--light-font);
+  box-shadow: 0 2px 6px 0 rgba(136, 148, 171, 0.2),
+    0 24px 20px -24px rgba(71, 82, 107, 0.1);
+  overflow: hidden;
+}
+
+::ng-deep .form-control {
+  background-color: white !important;
+  border: none !important;
+}
+i {
+  color: var(--gray-hot--70);
+}
